@@ -12,8 +12,11 @@ body {
 	color: rgba(0,0,0,0.8);
 	line-height: 1.8;
 	display: flex;
-	flex-direction: column;
-	
+	flex-direction: column;	
+}
+input, button, textarea {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
 }
 header {	
 	padding-top: 29px;
@@ -354,22 +357,29 @@ nav > .item:hover {
 	display: flex;
 	width: 100%;
 	justify-content: center;
+
 }
-.subscribe-form > p {
-	display: flex;
-	align-items: center;
+.subscribe-form > input {
+	/*display: flex;*/
+	/*align-items: center;*/
 	width: 40%;
 	height: 8ch;
 
 	background-color: white;
 	box-sizing: border-box;
 	border-radius: 0.3em;
-	
+	border-width: 0;
+
 	color: rgba(0,0,0,0.4);
+	/*font-size: 16px;*/
 	padding-left: 3ch;
 	margin-right: 2%;
 }
-.subscribe-form > a {
+.subscribe-form > input::placeholder {
+	opacity: 0.6;
+}
+.subscribe-form > button {
+	/*font-size: 16px;*/
 	display: flex;	
 	width: 20%;
 	height: 8ch;
@@ -383,10 +393,10 @@ nav > .item:hover {
 	align-items: center;
 	font-weight: 700;
 }
-.subscribe-form > a:hover {
+/*.subscribe-form > button:hover {
 	background-color: unset;
 	color: red;
-}
+}*/
 
 /* MAIN > FEEDBACK */
 .feedback {
@@ -416,11 +426,18 @@ nav > .item:hover {
 	justify-content: space-between;
 	/*margin-right: 110px;*/
 }
-.feedback-form > div {
+
+.feedback-form > input,
+.feedback-form > textarea {
 	margin-bottom: 45px;
-	padding-left: 5ch;
-	padding-top: 2ch;
+	padding-left: 5ch;	
 	box-sizing: border-box;
+	border-width: 0;
+}
+.feedback-form > input::placeholder,
+.feedback-form > textarea::placeholder {
+	opacity: 0.8;	
+
 }
 .feedback-form-name {
 	width: 46%;
@@ -438,8 +455,10 @@ nav > .item:hover {
 .feedback-form-message {
 	width: 100%;
 	height: 25ch;
+	padding-top: 2ch;
 	background-color: #e5e5e5;
 	border-radius: 0.5em;
+	resize: none;
 }
 .feedback-form-submit {
 	width: 100%;
@@ -468,6 +487,7 @@ nav > .item:hover {
 	flex-direction: column;
 	justify-content: center;
 }
+
 
 /* ======= FOOTER ======= */
 .footer-background {
@@ -547,7 +567,9 @@ nav > .item:hover {
 	.feature-pics > img:nth-of-type(n+5) {
 		display: none;
 	}
-	.feedback-form > div, .feedback-contacts {
+	.feedback-contacts, 
+	.feedback-form > input,
+	.feedback-form > textarea {
 		padding-left: 3vw;
 	}	
 	.team .mate-contacts {
